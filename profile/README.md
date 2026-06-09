@@ -7,7 +7,21 @@
 <h1 align="center">SkeinRank</h1>
 
 <p align="center">
-  <strong>Open-source terminology control plane for search and RAG.</strong>
+  <strong>The open-source control plane for the language your search runs on.</strong>
+</p>
+
+<p align="center">
+  Your team's vocabulary drifts — features get renamed, slang piles up, acronyms collide.<br/>
+  Your embedding model never learned your internal names, so retrieval quietly rots.<br/>
+  SkeinRank detects that drift, versions your terminology, and keeps search quality under control as you scale.
+</p>
+
+<p align="center">
+  <a href="https://skeinrank.github.io">Website</a> ·
+  <a href="https://skeinrank.github.io/getting-started/quickstart/">Quickstart</a> ·
+  <a href="https://skeinrank.github.io/docs/">Docs</a> ·
+  <a href="https://github.com/SkeinRank/skeinrank">Main repo</a> ·
+  <a href="https://pypi.org/project/skeinrank/">PyPI</a>
 </p>
 
 <p align="center">
@@ -15,44 +29,65 @@
     <img alt="CI" src="https://github.com/SkeinRank/skeinrank/actions/workflows/ci.yml/badge.svg" />
   </a>
   <a href="https://pypi.org/project/skeinrank/">
-    <img alt="PyPI" src="https://img.shields.io/pypi/v/skeinrank.svg" />
+    <img alt="PyPI" src="https://img.shields.io/pypi/v/skeinrank?color=8b5cf6" />
   </a>
   <a href="https://github.com/SkeinRank/skeinrank/blob/main/LICENSE">
-    <img alt="License" src="https://img.shields.io/github/license/SkeinRank/skeinrank.svg" />
+    <img alt="License" src="https://img.shields.io/github/license/SkeinRank/skeinrank?color=22d3ee" />
   </a>
-  <a href="https://skeinrank.github.io">
-    <img alt="Website" src="https://img.shields.io/badge/website-skeinrank.github.io-22d3ee" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://skeinrank.github.io">Website</a> ·
-  <a href="https://skeinrank.github.io/getting-started/quickstart/">Quickstart</a> ·
-  <a href="https://skeinrank.github.io/platform-preview/">Platform Preview</a> ·
-  <a href="https://github.com/SkeinRank/skeinrank">Main repository</a>
 </p>
 
 ---
 
-SkeinRank helps teams turn messy aliases, internal jargon, and domain-specific terminology into governed runtime context for enterprise search, Elasticsearch enrichment, RAG, and knowledge workflows.
+## The problem nobody is measuring
 
-Instead of treating terms like `k8s`, `kube`, `postgres`, `pg`, or internal project aliases as loose text, SkeinRank lets teams normalize them into canonical concepts, review evidence, publish snapshots, and serve stable context to downstream search and AI systems.
+Retrieval quality isn't static — it decays.
 
-## What SkeinRank is building
+A feature called `checkout-v2` in January becomes `payments-core` in your June docs. On-call still types "the checkout thing." Three names for one reality, indexed at different times. Your embedding model never saw your internal names on the public internet, so it guesses — and as your language drifts, those guesses rot. No error, no alert, just search that's a little worse every month until someone says *"the bot got dumb."*
 
-- **Terminology governance** for canonical terms, aliases, profiles, bindings, and snapshots.
-- **Search enrichment workflows** for technical documents, incidents, runbooks, and enterprise knowledge bases.
-- **Runtime context APIs** that help search, RAG, and agent systems use governed terminology safely.
-- **Evidence-assisted review** so teams can validate terminology changes against real indexed content.
+Your vocabulary is the one input to retrieval that changes constantly — and no system owns it, versions it, or tells you when it drifts.
 
-## Main repository
+**SkeinRank is that system.**
 
-| Repository | Purpose |
+## What SkeinRank does
+
+A terminology **control plane** that sits beside the Elasticsearch, OpenSearch, or vector DB you already run. It doesn't replace your search engine — it governs the language feeding into it.
+
+- **Drift detection** — measure how far your live language has moved from the vocabulary your search relies on.
+- **Terminology governance** — canonical terms, aliases, profiles, bindings, and immutable versioned snapshots.
+- **Context-aware disambiguation** — `pg timeout` resolves differently from `pg layout`, by explicit rule, not a guess.
+- **Evidence-assisted review** — validate every change against real indexed content before it ships.
+- **Safe rollout** — blue/green alias swap, rollback, and before/after retrieval evaluation.
+- **Agent integration via MCP** — agents can *propose* terminology fixes under strict RBAC, but never mutate production directly.
+
+## Try it in 60 seconds
+
+```bash
+pip install skeinrank
+```
+
+```python
+import skeinrank
+skeinrank.canonicalize("k8s pg timeout")   # → "kubernetes postgresql timeout"
+skeinrank.canonicalize("pg layout")        # → "page layout"
+```
+
+## Repositories
+
+| Repository | What's inside |
 | --- | --- |
-| [`SkeinRank/skeinrank`](https://github.com/SkeinRank/skeinrank) | Main monorepo with the core library, governance API, UI, Elasticsearch workflows, Docker Compose stack, and documentation. |
+| **[skeinrank](https://github.com/SkeinRank/skeinrank)** | Monorepo: Python SDK & CLI, governance API, React console, Elasticsearch provider, Helm chart, Docker Compose stack, and docs. |
+
+Inside the monorepo:
+
+| Package | Purpose |
+| --- | --- |
+| `skeinrank-core` | Python SDK, CLI, canonicalization & extraction |
+| `skeinrank-governance-api` | FastAPI control-plane API, workers, MCP adapter |
+| `skeinrank-provider-elasticsearch` | Elasticsearch provider & enrichment CLI |
+| `skeinrank-ui` | React/TypeScript governance console |
 
 ## Project status
 
-SkeinRank is in active public preview. The current focus is on the terminology control plane, Docker Compose deployment path, governance console, Elasticsearch evidence workflows, and search/RAG integration surfaces.
+SkeinRank is in active open-source public preview — not a hosted SaaS. Current focus: binding-aware runtime canonicalization, terminology drift detection, safe governance, Terminology-as-Code, and operator-controlled Elasticsearch/OpenSearch delivery.
 
-For the product overview and docs, start at **[skeinrank.github.io](https://skeinrank.github.io)**.
+Start at **[skeinrank.github.io](https://skeinrank.github.io)** · Apache-2.0 licensed.
