@@ -1,65 +1,59 @@
-<p align="center">
-  <a href="https://skeinrank.github.io">
-    <img src="https://skeinrank.github.io/skeinrank-favicon.png" alt="SkeinRank logo" width="88" height="88" />
-  </a>
-</p>
+# SkeinRank
 
-<h1 align="center">SkeinRank</h1>
+**Open-source infrastructure for governing the language used by search, RAG, and AI agents.**
 
-<p align="center">
-  <strong>The open-source control plane for the language your search runs on.</strong>
-</p>
+Teams rarely keep one stable vocabulary. Product names change, aliases accumulate, documentation lags behind code, and independent agents invent different names for the same concept. SkeinRank turns that language into reviewed, versioned, testable infrastructure.
 
-<p align="center">
-  Your team's vocabulary drifts — features get renamed, slang piles up, acronyms collide.<br/>
-  Your embedding model never learned your internal names, so retrieval quietly rots.<br/>
-  SkeinRank detects that drift, versions your terminology, and keeps search quality under control as you scale.
-</p>
+[Website](https://skeinrank.github.io/) · [Main repository](https://github.com/SkeinRank/skeinrank) · [SkeinRank on PyPI](https://pypi.org/project/skeinrank/) · [Agent Lexicon on PyPI](https://pypi.org/project/agent-lexicon/)
 
-<p align="center">
-  <a href="https://skeinrank.github.io">Website</a> ·
-  <a href="https://skeinrank.github.io/getting-started/quickstart/">Quickstart</a> ·
-  <a href="https://skeinrank.github.io/docs/">Docs</a> ·
-  <a href="https://github.com/SkeinRank/skeinrank">Main repo</a> ·
-  <a href="https://pypi.org/project/skeinrank/">PyPI</a>
-</p>
+## The ecosystem
 
-<p align="center">
-  <a href="https://github.com/SkeinRank/skeinrank/actions/workflows/ci.yml">
-    <img alt="CI" src="https://github.com/SkeinRank/skeinrank/actions/workflows/ci.yml/badge.svg" />
-  </a>
-  <a href="https://pypi.org/project/skeinrank/">
-    <img alt="PyPI" src="https://img.shields.io/pypi/v/skeinrank?color=8b5cf6" />
-  </a>
-  <a href="https://github.com/SkeinRank/skeinrank/blob/main/LICENSE">
-    <img alt="License" src="https://img.shields.io/github/license/SkeinRank/skeinrank?color=22d3ee" />
-  </a>
-</p>
+### Core projects
 
----
+| Repository | Purpose |
+| --- | --- |
+| **[skeinrank](https://github.com/SkeinRank/skeinrank)** | Domain Language Control Plane for enterprise search, RAG, and agent workflows. Discover terminology, review evidence, publish versioned dictionaries, and canonicalize runtime text without replacing the search stack you already run. |
+| **[agent-lexicon](https://github.com/SkeinRank/agent-lexicon)** | Deterministic shared vocabulary for AI coding agents. Give agents canonical project language before a task, resolve ambiguous terms, guard tool calls, and detect naming drift in diffs and pull requests. |
 
-## The problem nobody is measuring
+### Evidence and benchmarks
 
-Retrieval quality isn't static — it decays.
+| Repository | What it demonstrates |
+| --- | --- |
+| **[skeinrank-benchmark](https://github.com/SkeinRank/skeinrank-benchmark)** | Reproducible cross-version terminology discovery in real open-source documentation. The canonical Airflow 2.7 → 3.0 run reached **P@5 100%** and **P@10 90%** with full label coverage. |
+| **[agent-lexicon-benchmark](https://github.com/SkeinRank/agent-lexicon-benchmark)** | Paired AI-agent benchmark over 60 runs. In the reference task set, strict canonical usage increased from **0% to 60%**, while canonical usage inside compound names increased from **10% to 100%**. |
+| **[oss-drift-report](https://github.com/SkeinRank/oss-drift-report)** | Reproducible measurements of how long officially renamed terminology survives in projects such as Kubernetes, OpenSearch, Home Assistant, and Airflow. |
 
-A feature called `checkout-v2` in January becomes `payments-core` in your June docs. On-call still types "the checkout thing." Three names for one reality, indexed at different times. Your embedding model never saw your internal names on the public internet, so it guesses — and as your language drifts, those guesses rot. No error, no alert, just search that's a little worse every month until someone says *"the bot got dumb."*
+### Documentation
 
-Your vocabulary is the one input to retrieval that changes constantly — and no system owns it, versions it, or tells you when it drifts.
+| Repository | Purpose |
+| --- | --- |
+| **[skeinrank.github.io](https://github.com/SkeinRank/skeinrank.github.io)** | Product website, documentation, architecture, and quickstarts for the SkeinRank ecosystem. |
 
-**SkeinRank is that system.**
+## How the projects fit together
 
-## What SkeinRank does
+```text
+Documents, code, and project terminology
+                  │
+                  ▼
+SkeinRank discovers and governs reviewed, versioned project language
+                  │
+                  ▼
+Agent Lexicon gives coding agents the right vocabulary
+and checks changes at PR time
+                  │
+                  ▼
+Benchmarks and drift reports measure the result
+```
 
-A terminology **control plane** that sits beside the Elasticsearch, OpenSearch, or vector DB you already run. It doesn't replace your search engine — it governs the language feeding into it.
+Use **SkeinRank** when the problem spans search, RAG, documentation, or organization-level terminology governance.
 
-- **Drift detection** — measure how far your live language has moved from the vocabulary your search relies on.
-- **Terminology governance** — canonical terms, aliases, profiles, bindings, and immutable versioned snapshots.
-- **Context-aware disambiguation** — `pg timeout` resolves differently from `pg layout`, by explicit rule, not a guess.
-- **Evidence-assisted review** — validate every change against real indexed content before it ships.
-- **Safe rollout** — blue/green alias swap, rollback, and before/after retrieval evaluation.
-- **Agent integration via MCP** — agents can *propose* terminology fixes under strict RBAC, but never mutate production directly.
+Use **Agent Lexicon** when the immediate problem is keeping coding agents, branches, identifiers, documentation, and tool calls aligned with a project vocabulary.
 
-## Try it in 60 seconds
+Use the benchmark and report repositories when you need reproducible evidence rather than a product claim.
+
+## Start locally
+
+### SkeinRank
 
 ```bash
 pip install skeinrank
@@ -67,27 +61,31 @@ pip install skeinrank
 
 ```python
 import skeinrank
-skeinrank.canonicalize("k8s pg timeout")   # → "kubernetes postgresql timeout"
-skeinrank.canonicalize("pg layout")        # → "page layout"
+
+skeinrank.canonicalize("k8s pg timeout")
 ```
 
-## Repositories
+### Agent Lexicon
 
-| Repository | What's inside |
-| --- | --- |
-| **[skeinrank](https://github.com/SkeinRank/skeinrank)** | Monorepo: Python SDK & CLI, governance API, React console, Elasticsearch provider, Helm chart, Docker Compose stack, and docs. |
+```bash
+pipx install agent-lexicon
 
-Inside the monorepo:
+alex init
+alex scan
+alex review
+alex publish
+```
 
-| Package | Purpose |
-| --- | --- |
-| `skeinrank-core` | Python SDK, CLI, canonicalization & extraction |
-| `skeinrank-governance-api` | FastAPI control-plane API, workers, MCP adapter |
-| `skeinrank-provider-elasticsearch` | Elasticsearch provider & enrichment CLI |
-| `skeinrank-ui` | React/TypeScript governance console |
+## Design principles
+
+- **Human-reviewed language** — discovery produces candidates; people publish decisions.
+- **Deterministic enforcement** — runtime resolution and merge checks can be replayed and audited.
+- **Evidence before rollout** — terminology changes carry examples from the content that motivated them.
+- **Works beside existing infrastructure** — SkeinRank complements Elasticsearch, OpenSearch, vector databases, CI, and agent tooling rather than replacing them.
+- **Measured in public** — benchmark configs, pinned commits, labels, and derived reports live in dedicated repositories.
 
 ## Project status
 
-SkeinRank is in active open-source public preview — not a hosted SaaS. Current focus: binding-aware runtime canonicalization, terminology drift detection, safe governance, Terminology-as-Code, and operator-controlled Elasticsearch/OpenSearch delivery.
+SkeinRank is an actively developed open-source ecosystem. The repositories are usable independently, while sharing one goal: make project language explicit enough to review, version, enforce, and measure.
 
-Start at **[skeinrank.github.io](https://skeinrank.github.io)** · Apache-2.0 licensed.
+Start with **[skeinrank](https://github.com/SkeinRank/skeinrank)** for search and governance, or **[agent-lexicon](https://github.com/SkeinRank/agent-lexicon)** for AI coding-agent workflows.
