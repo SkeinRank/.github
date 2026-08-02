@@ -75,7 +75,7 @@ Deterministic authority, controlled scope expansion, managed execution, and audi
   <tr>
     <td width="34%" valign="top">
       <strong>Claim Plane</strong><br>
-      <code>pip install claim-plane</code><br><br>
+      <code>uv tool install claim-plane</code><br><br>
       Explicit change authority, controlled scope expansion, managed execution, and auditable evidence.
     </td>
     <td width="33%" valign="top">
@@ -85,7 +85,7 @@ Deterministic authority, controlled scope expansion, managed execution, and audi
     </td>
     <td width="33%" valign="top">
       <strong>SkeinRank</strong><br>
-      <code>pip install skeinrank</code><br><br>
+      <code>pipx install skeinrank</code><br><br>
       Discover terminology, review evidence, publish dictionaries, and canonicalize runtime text.
     </td>
   </tr>
