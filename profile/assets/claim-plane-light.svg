@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="title desc">
+  <title id="title">Claim Plane</title>
+  <desc id="desc">Deterministic authority and evidence for AI coding agents</desc>
+  <rect x="1" y="1" width="1198" height="218" rx="24" fill="#ffffff" stroke="#d0d7de"/>
+  <rect x="14" y="22" width="8" height="176" rx="4.0" fill="#16a34a"/>
+  <g transform="translate(52 42)">
+      <rect width="64" height="64" rx="16" fill="#f6f8fa" stroke="#16a34a" stroke-width="2"/>
+      <rect x="12" y="15" width="40" height="34" rx="7" fill="none" stroke="#16a34a" stroke-width="2.2"/>
+      <path d="M12 25h52" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="19" y="33" width="10" height="10" rx="2.5" fill="none" stroke="#16a34a" stroke-width="2"/>
+      <rect x="35" y="33" width="10" height="10" rx="2.5" fill="none" stroke="#16a34a" stroke-width="2"/>
+      <path d="M20 20h5" stroke="#16a34a" stroke-width="2.2" stroke-linecap="round"/>
+    </g>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+    <text x="144" y="84" fill="#24292f" font-size="34" font-weight="760" letter-spacing="-0.5">Claim Plane</text>
+    <text x="144" y="118" fill="#57606a" font-size="16" font-weight="500">Deterministic authority and evidence for AI coding agents</text>
+    <rect x="52" y="156" width="156" height="36" rx="18.0" fill="#ffffff" stroke="#1a7f37"/><text x="130.0" y="178.8" fill="#1a7f37" font-size="14" font-weight="650" text-anchor="middle">#scope-control</text>
+    <rect x="222" y="156" width="110" height="36" rx="18.0" fill="#ffffff" stroke="#1a7f37"/><text x="277.0" y="178.8" fill="#1a7f37" font-size="14" font-weight="650" text-anchor="middle">#swarms</text>
+    <rect x="346" y="156" width="110" height="36" rx="18.0" fill="#ffffff" stroke="#1a7f37"/><text x="401.0" y="178.8" fill="#1a7f37" font-size="14" font-weight="650" text-anchor="middle">#evidence</text>
+  </g>
+  <g transform="translate(1088 82)" stroke="#57606a" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M-18 0h28M2-10l10 10-10 10"/></g>
+</svg>
