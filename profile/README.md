@@ -16,15 +16,6 @@
   Open-source control planes for reliable AI systems: govern language, align agent behavior, and verify software changes.
 </p>
 
-<p align="center">
-  <a href="https://github.com/SkeinRank/claim-plane"><img alt="Claim Plane stars" src="https://img.shields.io/github/stars/SkeinRank/claim-plane?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/claim-plane/forks"><img alt="Claim Plane forks" src="https://img.shields.io/github/forks/SkeinRank/claim-plane?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/agent-lexicon"><img alt="Agent Lexicon stars" src="https://img.shields.io/github/stars/SkeinRank/agent-lexicon?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/agent-lexicon/forks"><img alt="Agent Lexicon forks" src="https://img.shields.io/github/forks/SkeinRank/agent-lexicon?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/skeinrank"><img alt="SkeinRank stars" src="https://img.shields.io/github/stars/SkeinRank/skeinrank?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/skeinrank/forks"><img alt="SkeinRank forks" src="https://img.shields.io/github/forks/SkeinRank/skeinrank?style=flat-square"></a>
-</p>
-
 ## Featured projects
 
 <a href="https://github.com/SkeinRank/claim-plane">
@@ -35,10 +26,9 @@
 </a>
 
 <p>
-  <a href="https://github.com/SkeinRank/claim-plane"><img alt="repo" src="https://img.shields.io/badge/repo-claim--plane-1f6feb?style=flat-square"></a>
-  <a href="https://pypi.org/project/claim-plane/"><img alt="PyPI" src="https://img.shields.io/pypi/v/claim-plane?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/claim-plane/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/SkeinRank/claim-plane?style=flat-square"></a>
-  <a href="https://github.com/SkeinRank/claim-plane/network/members"><img alt="forks" src="https://img.shields.io/github/forks/SkeinRank/claim-plane?style=flat-square"></a>
+  <a href="https://pypi.org/project/claim-plane/"><img alt="Claim Plane on PyPI" src="https://img.shields.io/pypi/v/claim-plane?style=flat-square&label=PyPI"></a>
+  <a href="https://github.com/SkeinRank/claim-plane/actions/workflows/ci.yml"><img alt="Claim Plane CI status" src="https://img.shields.io/github/actions/workflow/status/SkeinRank/claim-plane/ci.yml?branch=main&style=flat-square&label=CI"></a>
+  <a href="https://arxiv.org/abs/2607.21909"><img alt="Claim Plane paper" src="https://img.shields.io/badge/paper-arXiv-B31B1B?style=flat-square"></a>
 </p>
 
 Deterministic authority, controlled scope expansion, managed execution, and auditable evidence for AI coding agents.
@@ -53,10 +43,8 @@ Deterministic authority, controlled scope expansion, managed execution, and audi
         </picture>
       </a>
       <br>
-      <a href="https://github.com/SkeinRank/agent-lexicon"><img alt="repo" src="https://img.shields.io/badge/repo-agent--lexicon-1f6feb?style=flat-square"></a>
-      <a href="https://pypi.org/project/agent-lexicon/"><img alt="PyPI" src="https://img.shields.io/pypi/v/agent-lexicon?style=flat-square"></a>
-      <a href="https://github.com/SkeinRank/agent-lexicon/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/SkeinRank/agent-lexicon?style=flat-square"></a>
-      <a href="https://github.com/SkeinRank/agent-lexicon/network/members"><img alt="forks" src="https://img.shields.io/github/forks/SkeinRank/agent-lexicon?style=flat-square"></a>
+      <a href="https://pypi.org/project/agent-lexicon/"><img alt="Agent Lexicon on PyPI" src="https://img.shields.io/pypi/v/agent-lexicon?style=flat-square&label=PyPI"></a>
+      <a href="https://github.com/SkeinRank/agent-lexicon/actions/workflows/ci.yml"><img alt="Agent Lexicon CI status" src="https://img.shields.io/github/actions/workflow/status/SkeinRank/agent-lexicon/ci.yml?branch=main&style=flat-square&label=CI"></a>
       <br><br>
       Canonical project vocabulary and merge-time drift detection for coding agents.
     </td>
@@ -68,10 +56,8 @@ Deterministic authority, controlled scope expansion, managed execution, and audi
         </picture>
       </a>
       <br>
-      <a href="https://github.com/SkeinRank/skeinrank"><img alt="repo" src="https://img.shields.io/badge/repo-skeinrank-1f6feb?style=flat-square"></a>
-      <a href="https://pypi.org/project/skeinrank/"><img alt="PyPI" src="https://img.shields.io/pypi/v/skeinrank?style=flat-square"></a>
-      <a href="https://github.com/SkeinRank/skeinrank/stargazers"><img alt="stars" src="https://img.shields.io/github/stars/SkeinRank/skeinrank?style=flat-square"></a>
-      <a href="https://github.com/SkeinRank/skeinrank/network/members"><img alt="forks" src="https://img.shields.io/github/forks/SkeinRank/skeinrank?style=flat-square"></a>
+      <a href="https://pypi.org/project/skeinrank/"><img alt="SkeinRank on PyPI" src="https://img.shields.io/pypi/v/skeinrank?style=flat-square&label=PyPI"></a>
+      <a href="https://github.com/SkeinRank/skeinrank/actions/workflows/ci.yml"><img alt="SkeinRank CI status" src="https://img.shields.io/github/actions/workflow/status/SkeinRank/skeinrank/ci.yml?branch=main&style=flat-square&label=CI"></a>
       <br><br>
       Domain language control for search, RAG, runtime text, and agent workflows.
     </td>
