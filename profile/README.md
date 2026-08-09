@@ -28,7 +28,8 @@
 <p>
   <a href="https://pypi.org/project/claim-plane/"><img alt="Claim Plane on PyPI" src="https://img.shields.io/pypi/v/claim-plane?style=flat-square&label=PyPI"></a>
   <a href="https://github.com/SkeinRank/claim-plane/actions/workflows/ci.yml"><img alt="Claim Plane CI status" src="https://img.shields.io/github/actions/workflow/status/SkeinRank/claim-plane/ci.yml?branch=main&style=flat-square&label=CI"></a>
-  <a href="https://arxiv.org/abs/2607.21909"><img alt="Claim Plane paper" src="https://img.shields.io/badge/paper-arXiv-B31B1B?style=flat-square"></a>
+  <a href="https://arxiv.org/abs/2607.21909"><img alt="Claim Plane paper #1" src="https://img.shields.io/badge/paper%20%231-arXiv-B31B1B?style=flat-square"></a>
+  <a href="https://arxiv.org/abs/2608.00947"><img alt="Claim Plane paper #2" src="https://img.shields.io/badge/paper%20%232-arXiv-B31B1B?style=flat-square"></a>
 </p>
 
 Deterministic authority, controlled scope expansion, managed execution, and auditable evidence for AI coding agents.
