@@ -6,10 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://skeinrank.github.io/"><strong>Website</strong></a> ·
-  <a href="https://github.com/SkeinRank/claim-plane"><strong>Claim Plane</strong></a> ·
-  <a href="https://github.com/orgs/SkeinRank/discussions"><strong>Discussions</strong></a> ·
-  <a href="https://github.com/SkeinRank?tab=repositories"><strong>All repositories</strong></a>
+  <a href="https://skeinrank.github.io/"><strong>Website</strong></a>
 </p>
 
 <p align="center">
